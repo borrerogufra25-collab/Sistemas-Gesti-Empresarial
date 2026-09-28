@@ -34,3 +34,16 @@ print(msg1, msg2)
 print(msg1, msg2, sep='|')
 
 print(msg2, end='!!')
+
+# Tabulador
+msg = Valor = '\t40'
+print(msg)
+Valor = 40
+# Comilla simple
+msg = 'Necesitamos \escapar\ la comilla simple'
+print(msg)
+'Necesitamos escapar la comilla simple'
+# Barra invertida
+msg = 'Capítulo \\ Sección \\ Encabezado'
+print(msg)
+'Capítulo \ Sección \ Encabezado'
