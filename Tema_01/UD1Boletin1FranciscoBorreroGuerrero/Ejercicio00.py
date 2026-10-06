@@ -37,3 +37,5 @@ match pj1:
                 print('Gana el jugador 1, las tijeras ganan al papel')
             case 3:
                 print('Es empate, los dos elegisteis tijeras')
+    case _:
+        print('Número incorrecto')
