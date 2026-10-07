@@ -4,5 +4,5 @@ hasta = 0
 
 hasta = int(input('¿Hasta dónde quiere que cuente?\n'))
 
-for i in range(1, hasta + 1):
+for i in range(0, hasta + 1, 1):  # Start | Stop | Step
     print(i)
