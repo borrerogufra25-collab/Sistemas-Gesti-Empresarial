@@ -8,6 +8,6 @@ while len(piramide) != hasta:
     piramide += '*'
     print(piramide)
 
-# while len(piramide) != 0:
-#     piramide -= piramide.end
-#     print(piramide)
+while len(piramide) > 1:
+    piramide = piramide[:-1]
+    print(piramide)
