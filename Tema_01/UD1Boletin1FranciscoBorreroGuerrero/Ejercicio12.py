@@ -2,9 +2,9 @@
 # y nos pida adivinarlo Tenemos 3 intentos. Puedes mirar el tutorial
 # inicial de Python que usamos para instalar VS Code e instalar la biblioteca numpy.
 
-import numpy as np
+import random
 
-numAleatorio = np.random.randint(0, 10)
+numAleatorio = random.randint(0, 10)
 intentos = 3
 oportunidad = 0
 
@@ -13,6 +13,7 @@ while intentos > 0:
 
     if oportunidad == numAleatorio:
         print("¡Has acertado!")
+        intentos = 3
     else:
         intentos -= 1
         if intentos > 0:
