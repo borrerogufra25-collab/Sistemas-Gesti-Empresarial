@@ -6,7 +6,7 @@
 salir = True
 opcion = 0
 saldo = 2323.65
-retirar = 0.0
+operacion = 0.0
 entradas = 0
 
 print('Bienvenido Usuario, soy un cajero')
@@ -24,6 +24,19 @@ while salir:
         case 1:
             print(f'\nSu saldo es: {saldo:.2f}')
 
+        case 2:
+            operacion = input('¿Cuánto quieres retirar? Su saldo actual: {saldo:.2f}')
+            if operacion > saldo:
+                print('No puedes retirar tanto. Su saldo: {saldo:.2f}')
+            else:
+                saldo = saldo - operacion
+                print('Su nuevo saldo es: {saldo:.2f}')
+
+        case 3:
+            operacion = input('¿Cuánto va a ingresar?')
+            saldo = saldo + operacion
+            print('Su nuevo saldo es: {saldo:.2f}')
+
         case 0:
-            print('\nGracias por usarme')
+            print('\n¡Hasta pronto!')
             salir = False
