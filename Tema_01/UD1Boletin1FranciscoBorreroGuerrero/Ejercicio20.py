@@ -7,7 +7,7 @@ salir = True
 opcion = 0
 saldo = 2323.65
 operacion = 0.0
-entradas = 0
+entrada = 56.74
 
 print('Bienvenido Usuario, soy un cajero')
 
@@ -18,24 +18,39 @@ while salir:
     print('3. Ingresar dinero')
     print('4. Comprar entradas para Shakira')
     print('0. Salir')
-    opcion = int(input(''))
+    opcion = int(input('\n'))
 
     match opcion:
         case 1:
             print(f'\nSu saldo es: {saldo:.2f}')
 
         case 2:
-            operacion = input(f'¿Cuánto quieres retirar? Su saldo actual: {saldo:.2f}')
+            operacion = float(
+                input(f'¿Cuánto quieres retirar? Su saldo actual: {saldo:.2f}€\n')
+            )
             if operacion > saldo:
-                print(f'No puedes retirar tanto. Su saldo: {saldo:.2f}')
+                print(f'No puedes retirar tanto. Su saldo: {saldo:.2f}€')
             else:
                 saldo = saldo - operacion
-                print(f'Su nuevo saldo es: {saldo:.2f}')
+                print(f'Su nuevo saldo es: {saldo:.2f}€')
 
         case 3:
-            operacion = input('¿Cuánto va a ingresar?')
+            operacion = float(input('¿Cuánto va a ingresar?\n'))
             saldo = saldo + operacion
-            print(f'Su nuevo saldo es: {saldo:.2f}')
+            print(f'Su nuevo saldo es: {saldo:.2f}€')
+
+        case 4:
+            operacion = 0
+            operacion = int(input('¿Cuántas entradas quieres?\n'))
+            operacion = entrada * operacion
+
+            if operacion > saldo:
+                print(
+                    f'No puedes permitírtelo. Su saldo: {saldo:.2f}€ y las entradas valen: {operacion:.2f}€'
+                )
+            else:
+                saldo = saldo - operacion
+                print(f'Entradas compradas por: {operacion:.2f}')
 
         case 0:
             print('\n¡Hasta pronto!')
