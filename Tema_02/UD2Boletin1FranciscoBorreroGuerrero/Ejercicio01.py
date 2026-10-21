@@ -2,3 +2,9 @@
 # negativos por 0.
 
 listaNum = [23, -42, 6, -2, -6, 26, 87, -12]
+
+for i in range(len(listaNum)):
+    if listaNum[i] < 0:
+        listaNum[i] = 0
+
+print(listaNum)
