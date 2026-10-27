@@ -29,13 +29,6 @@ print(list(reversed(tienda)))  # Otra forma de invertir
 print(tienda.reverse())
 
 
-# Añadir al final de la lista
-print('Añadir al final de la lista')
-
-tienda.append('Atún')
-print(tienda)
-
-
 # Creando desde vacío
 # Una forma muy habitual de trabajar con listas es empezar con una vacía e ir añadiendo
 # elementos poco a poco. Se podría hablar de un patrón creación.
@@ -48,15 +41,6 @@ for i in range(20):
         numerosPares.append(i)
 
 print(numerosPares)
-
-
-# Añadir en cualquier posición de una lista
-print('Añadir en cualquier posición de una lista')
-
-tienda.insert(1, 'Jamón')
-print(tienda)
-tienda.insert(3, 'Queso')
-print(tienda)
 
 
 # Repetir elementos
