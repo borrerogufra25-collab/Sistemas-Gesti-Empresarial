@@ -81,3 +81,18 @@ print(shopping.index('Huevos'))
 shopping = ['Agua', 'Huevos', 'Aceite', 'Sal', 'Limón']
 print('Aceite' in shopping)
 print('Pollo' in shopping)
+
+
+# Ordenar una lista
+# Conservando lista original: Mediante la función sorted() que devuelve una nueva lista ordenada:
+shopping = ['Agua', 'Huevos', 'Aceite', 'Sal', 'Limón']
+print(sorted(shopping))
+
+# Modificando la lista original: Mediante la función sort():
+shopping = ['Agua', 'Huevos', 'Aceite', 'Sal', 'Limón']
+print(shopping.sort())
+
+# Ambos métodos admiten un parámetro «booleano» reverse para indicar si queremos que
+# la ordenación se haga en sentido inverso:
+shopping = ['Agua', 'Huevos', 'Aceite', 'Sal', 'Limón']
+print(sorted(shopping, reverse=True))
