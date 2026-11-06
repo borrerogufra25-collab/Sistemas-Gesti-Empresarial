@@ -10,6 +10,7 @@ nombres = []
 kms = []
 total_kms = []
 semana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
+buscar = ''
 
 
 while True:
@@ -24,12 +25,29 @@ while True:
     match opcion:
 
         case 1:
-            print('¿Cómo se llama el conductor?')
+            print('\n¿Cómo se llama el conductor?\n')
             nombres.append(input(''))
 
-            print('Ahora añade los kilómetros: ')
-            for i, semana in len(semana), semana:
-                kms.append(input(f'{semana}: '))
+            print('\nAhora añade los kilómetros: \n')
+            for dia in semana:
+                print(f'{dia}: ')
+                i = float(input(''))
+                kms.append(i)
+            total_kms.append(sum(kms))
+            kms.clear
+
+        case 2:
+            buscar = input('\n¿Qué conductor quieres buscar?\n')
+            if buscar in nombres:
+                print(
+                    f'\n{buscar} tiene un total de: {total_kms[nombres.index(buscar)]} km\n'
+                )
+            else:
+                print('\nConductor no encontrado\n')
+
+        case 3:
+            buscar = input('\n¿Qué conductor quieres editar?\n')
+            # if buscar in nombres:
 
         case 0:
             print('¡Hasta pronto!')
