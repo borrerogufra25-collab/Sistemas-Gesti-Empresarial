@@ -19,6 +19,7 @@ while True:
     print('2. Buscar conductor')
     print('3. Editar conductor')
     print('4. Borrar conductor')
+    print('5. Mostrar todos')
     print('0. Salir')
     opcion = int(input('Elija una opción: '))
 
@@ -34,7 +35,7 @@ while True:
                 i = float(input(''))
                 kms.append(i)
             total_kms.append(sum(kms))
-            kms.clear
+            kms.clear()
 
         case 2:
             buscar = input('\n¿Qué conductor quieres buscar?\n')
@@ -47,10 +48,45 @@ while True:
 
         case 3:
             buscar = input('\n¿Qué conductor quieres editar?\n')
-            # if buscar in nombres:
+            if buscar in nombres:
+                posicion = nombres.index(buscar)
+
+                nuevo_nombre = input('\nNuevo nombre (Enter para mantener el actual): ')
+                if nuevo_nombre != '':
+                    nombres[posicion] = nuevo_nombre
+
+                print('\nAñade de nuevo los kilómetros: \n')
+                for dia in semana:
+                    print(f'{dia}: ')
+                    i = float(input(''))
+                    kms.append(i)
+                total_kms[posicion] = sum(kms)
+                kms.clear()
+
+                print('\nConductor actualizado\n')
+            else:
+                print('\nConductor no encontrado\n')
+
+        case 4:
+            buscar = input('\n¿Qué conductor quieres borrar?\n')
+            if buscar in nombres:
+                posicion = nombres.index(buscar)
+
+                nombres.pop(posicion)
+                total_kms.pop(posicion)
+                print('\nConductor borrado\n')
+            else:
+                print('\nConductor no encontrado\n')
+
+        case 5:
+            print('\nConductores y kilómetros realizados:')
+            for posicion in range(len(nombres)):
+                print(f'{nombres[posicion]}: {total_kms[posicion]} km')
 
         case 0:
+
             print('¡Hasta pronto!')
+            break
 
         case _:
             print('Opción incorrecta')
