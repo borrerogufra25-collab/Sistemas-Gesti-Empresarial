@@ -10,8 +10,6 @@
 
 import random
 
-opcion = 0
-
 estudiantes = {
     '12345678A': round(random.uniform(1, 10), 2),
     '12345678B': round(random.uniform(1, 10), 2),
@@ -19,15 +17,60 @@ estudiantes = {
 }
 
 while True:
-    print('1. Mostrar los datos')
-    print('2. Modificar la nota.')
-    print('3. Añadir un nuevo estudiante.')
-    print('4. Estudiantes que tienen nota media mayor a un valor')
+    print('\n1. Mostrar los datos')
+    print('2. Modificar la nota')
+    print('3. Añadir un nuevo estudiante')
+    print('4. Estudiantes con nota media mayor a un valor')
     print('0. Salir')
-    opcion = input('')
+    opcion = input('Elige una opción: ')
 
     match opcion:
-        case 1:
+        case '1':
             print('\nDATOS DE LOS ESTUDIANTES')
             for dni, nota in estudiantes.items():
                 print(f'DNI: {dni} | NOTA MEDIA: {nota}')
+
+        case '2':
+            dni = input('DNI del estudiante: ').upper()
+            if dni in estudiantes:
+                try:
+                    nueva = float(input('Nueva nota (0-10): '))
+                    if 0 <= nueva <= 10:
+                        estudiantes[dni] = nueva
+                        print('Nota modificada.')
+                    else:
+                        print('La nota debe estar entre 0 y 10.')
+                except ValueError:
+                    print('Nota no válida.')
+            else:
+                print('Ese DNI no existe.')
+
+        case '3':
+            dni = input('DNI del nuevo estudiante: ').upper()
+            if dni in estudiantes:
+                print('Ese DNI ya existe.')
+            else:
+                estudiantes[dni] = round(random.uniform(1, 10), 2)
+                print(f'Estudiante añadido con nota {estudiantes[dni]}')
+
+        case '4':
+            try:
+                corte = float(input('Nota de corte: '))
+                admitidos = {
+                    dni: nota for dni, nota in estudiantes.items() if nota > corte
+                }
+                if admitidos:
+                    print(f'\nEstudiantes con nota mayor a {corte}:')
+                    for dni, nota in admitidos.items():
+                        print(f'DNI: {dni} | NOTA MEDIA: {nota}')
+                else:
+                    print('Ningún estudiante supera esa nota.')
+            except ValueError:
+                print('Valor no válido.')
+
+        case '0':
+            print('Adiós.')
+            break
+
+        case _:
+            print('Opción no válida.')
