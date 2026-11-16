@@ -64,12 +64,7 @@ while True:
         case 4:
             maximo = max(recaudado)
             print(f'El día que más ganaste fue: {maximo:.2f}€')
-            for i in recaudado:
-                if i == maximo:
-                    contador += 1
-
-            print(f'Aparece: {contador}')
-            contador = 0
+            print(f'Aparece: {recaudado.count(maximo)}')
 
         case 5:
             for i, valor in enumerate(recaudado):
