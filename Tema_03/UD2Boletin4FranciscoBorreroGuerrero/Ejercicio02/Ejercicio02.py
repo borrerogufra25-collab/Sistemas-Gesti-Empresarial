@@ -1,6 +1,6 @@
-from datetime import datetime
-
 # 2. Crea un programa que añada la fecha y hora actuales al final de un fichero.
+
+from datetime import datetime
 
 f = open('Tema_03/UD2Boletin4FranciscoBorreroGuerrero/Ejercicio02/Ejercicio02.txt', 'a')
 hora = datetime.now()
